@@ -1,0 +1,12 @@
+.title-container{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    color: navy;
+}
+main{
+    display: flex;
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+}

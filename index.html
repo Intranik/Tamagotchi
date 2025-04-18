@@ -1,18 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Tamagotchi OOP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="Tamagotchi.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e1e2f, #2c2c3a);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .pet-img {
+      transition: transform 0.5s;
+    }
+    .animate-eat {
+      animation: bounce 0.5s;
+    }
+    .animate-play {
+      animation: shake 0.5s;
+    }
+    .animate-nap {
+      animation: spin 0.5s;
+    }
+    #text{
+      color: white;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    #log {
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: #f8f9fa;
+      padding: 10px;
+      border: 1px solid #dee2e6;
+    }
+  </style>
 </head>
-<body>
-    <div class="title-container">
-        <h1>TAMAGOTCHI GAME</h1>
+<body class="bg-light">
+<div class="container py-4">
+  <h1 class="text-center mb-4" id="text">Tamagotchi - Adoptera ett husdjur</h1>
+
+  <form id="petForm" class="row g-3 mb-4">
+    <div class="col-md-4">
+      <input type="text" id="petName" class="form-control" placeholder="Husdjurens namn" required>
     </div>
-    <main>
-        <div class=""></div>
-    </main>
-    
+    <div class="col-md-4">
+      <select id="animalType" class="form-select" required>
+        <option value="" disabled selected>Välj djurtyp</option>
+        <option value="Hund">Hund</option>
+        <option value="Katt">Katt</option>
+        <option value="Kanin">Kanin</option>
+        <option value="Fågel">Fågel</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-primary w-100">Adoptera</button>
+    </div>
+  </form>
+
+  <div class="row" id="petsContainer"></div>
+
+  <h4 class="mt-5">Aktivitetslogg</h4>
+  <div id="log"></div>
+</div>
 </body>
 </html>

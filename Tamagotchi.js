@@ -45,8 +45,8 @@ class Pet {
     petDiv.className = 'col-md-3';
     petDiv.id = `pet-${this.id}`;
     petDiv.innerHTML = `
-    <div class="card text-center" style="background-image: url('${backgroundImage}'); background-size: cover; background-position: center; color: #fff;">
-      <div class="card-body bg-dark bg-opacity-50 rounded">
+    <div class="card text-center" style="height: 400px; background-image: url('${backgroundImage}'); background-size: cover; background-position: center; color: #fff; ">
+      <div class="card-body bg-dark bg-opacity-50 rounded" id="petCart1">
         <h5 class="card-title">${this.name} (${this.type})</h5>
         <img src="${this.getImageForType()}" class="pet-img mb-2" id="img-${this.id}" width="80">
         <p>Energi: <span id="energy-${this.id}">${this.energy}</span></p>
